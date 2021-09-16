@@ -16,6 +16,8 @@ git clone https://github.com/jayasin/nextTestJS.git
 cd nextTestJS
 yarn install
 yarn dev
+
+Visit http://localhost:3000 from browser
 ```
 
 ### Task Planner Dashboard
