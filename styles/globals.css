@@ -1,0 +1,266 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 250px;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 2px 0px 8px 1px #b0acac85;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.card .title {
+  margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.card .duration {
+  font-size: 12px;
+  color: #928d8d;
+  margin: 8px 0;
+}
+
+.header {
+  width: 100%;
+  height: 40px;
+  display: -moz-box;
+  display: flex;
+  background: #4791db;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-weight: 600;
+}
+
+.page-container{
+  margin-top: 50px;
+  padding: 0 200px;
+}
+
+.task-list {
+  width: 275px;
+  background: #c6dfe8b0;
+  border-radius: 10px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 75vh;
+  max-height: 75vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.task-list .task-list-title {
+    text-align: center;
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+ .task-list .no-task{
+  color: #9c9a9adb;
+ }
+
+.task-list::-webkit-scrollbar{
+ display: none;
+}
+
+.btn-add-task,
+.MuiButton-containedPrimary {
+  margin: 10px 20px !important;
+  background: #4791db !important;
+  text-transform: none !important;
+}
+
+.action-btn-container {
+  width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.action-btn-container .date-picker {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 50px;
+}
+
+.action-btn-container .button-wrapper {
+  width: 50%;
+  display: flex;
+    justify-content: flex-end;
+    padding: 10px 30px;
+  }
+  
+
+.card-actions {
+  display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 25px;
+    gap: 10px;
+}
+
+.card-actions p {
+  margin: 0;
+  font-size: 14px;
+  color: #4791db;
+  /* text-decoration: underline; */
+  cursor: pointer;
+}
+
+.card-actions .btn-delete {
+  color: #4791db !important;
+  cursor: pointer;
+}
+
+.card-actions .btn-edit {
+  color: #4791db !important;
+  cursor: pointer;
+}
+
+.delete-dialog{
+  width: 500px;
+}
+
+.delete-dialog h1 {
+  font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.delete-dialog .button-container {
+  display: flex;
+  height: 60px;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.add-task-form {
+  width: 450px;
+  margin: auto;
+  border: 1px solid #4791db;
+}
+
+.add-task-form form {
+  padding: 0 25px 25px 25px;
+}
+
+.add-task-title {
+  margin: 10px 0 0 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #4791db;
+}
+
+.MuiTextField-root {
+  margin: 20px 0 !important;
+} 
+
+.form-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+}
+
+.form-button-container .MuiButtonBase-root {
+  width: 50%;
+}
+
+.tasks-container {
+  display: flex;
+}
+
+.chart-area {
+  margin-left: 100px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  background: #424350bf;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+}
+
+.spinner {
+  width: 75px;
+}
+
+.notification-wrapper {
+ 
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: 5px;
+    height: 40px;
+    color: #FFF;
+    align-items: center;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: red;
+}
+
+.notification-message {
+  font-size: 14px;
+  margin: 0;
+  padding: 0 15px;
+}
+
+.chart-section p{
+  text-align: center;
+  font-weight: 600;
+  color: #4791db;
+}
+
+.chart-section {
+  margin: 0 ;
+}
+.error-text {
+  color: #f44336;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+}
