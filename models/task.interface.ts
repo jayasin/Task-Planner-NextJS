@@ -6,3 +6,10 @@ export interface Task {
     modified_at: string,
     id: string
 }
+
+export interface IAddTask {
+    task_name: string,
+    from: string,
+    to: string,
+    id?: string
+}

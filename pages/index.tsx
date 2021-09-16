@@ -142,24 +142,38 @@ const Tasks: NextPage<Props> = ({ tasks, ...props }) => {
         <div className="tasks-container">
           <div className="task-list">
             <p className="task-list-title">Task List</p>
-            {props?.allTasks?.map((taskData: Task) => (
-              <TaskCard
-                key={taskData.created_at}
-                name={taskData.task_name}
-                from={taskData.from}
-                to={taskData.to}
-                id={taskData.id}
-                reload={() => getTaskList()}
-              />
-            ))}
-            {props?.allTasks.length ? (
-              <></>
-            ) : <p className="no-task">No Taks were added for the day</p>}
+            <div className="task-card-list">
+              {props?.allTasks?.map((taskData: Task) => (
+                <TaskCard
+                  key={taskData.created_at}
+                  name={taskData.task_name}
+                  from={taskData.from}
+                  to={taskData.to}
+                  id={taskData.id}
+                  reload={() => getTaskList()}
+                />
+              ))}
+
+              {props?.allTasks.length ? (
+                <></>
+              ) : (
+                <p className="no-task">No Taks were added for the day</p>
+              )}
+            </div>
           </div>
           <div className="chart-section">
-            {props?.allTasks.length ? <p>Hours of Effort - Projection</p> : <></>}
+            {props?.allTasks.length ? (
+              <p>Hours of Effort - Projection</p>
+            ) : (
+              <></>
+            )}
             <div className="chart-area">
-            <Pie data={chartData} options={pieChartOptions} width={400} height={200}/>
+              <Pie
+                data={chartData}
+                options={pieChartOptions}
+                width={400}
+                height={200}
+              />
             </div>
           </div>
         </div>

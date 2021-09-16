@@ -48,7 +48,7 @@ const TaskCard: React.FC<CardData> = ({name, from, to, id, reload}) => {
     return (
         <div className="card">
             
-            <p className="title">{name.charAt(0).toUpperCase() + name.slice(1)}</p>
+            <p className="title">{name}</p>
             <p className="duration">From: {moment(from, moment.ISO_8601).utc().format('DD-MM-YYYY hh:mm A')}</p>
             <p className="duration">To: {moment(to, moment.ISO_8601).utc().format('DD-MM-YYYY hh:mm A')}</p>
             <div className="card-actions">

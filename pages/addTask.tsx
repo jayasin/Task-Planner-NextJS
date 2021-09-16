@@ -12,6 +12,7 @@ import moment from 'moment';
 import Header from "../components/Header";
 import { API, showNotification } from "../common/constants";
 import Loader from "../components/Loader";
+import { IAddTask } from "../models/task.interface";
 
 
 const validationSchema = yup.object({
@@ -46,7 +47,7 @@ const AddTask: NextPage = () => {
         onSubmit: async (values: any) => {
 
             /* Converting datepicker format to Date Format  */
-            const formData = {
+            var formData: IAddTask = {
                 task_name: values.name.trim(), 
                 from: values.from.replace("T", " "),
                 to: values.to.replace("T", " ")
@@ -54,6 +55,7 @@ const AddTask: NextPage = () => {
 
             const fromDate = moment(moment(formData.from, moment.ISO_8601).utc().format());
             const toDate = moment(moment(formData.to, moment.ISO_8601).utc().format());
+            formData.task_name =  formData.task_name.charAt(0).toUpperCase() + formData.task_name.slice(1);
             var duration = moment.duration(toDate.diff(fromDate));
             var minutes = duration.asMinutes();
 

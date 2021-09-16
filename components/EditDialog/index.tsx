@@ -9,6 +9,7 @@ import moment from 'moment';
 
 import { API, showNotification } from '../../common/constants';
 import Loader from '../Loader';
+import { IAddTask } from '../../models/task.interface';
 
 const validationSchema = yup.object({
     name: yup
@@ -38,7 +39,7 @@ const EditDialog: React.FC<EditDialogProps> = ({closeDialog, name, from, to, id,
         onSubmit: async (values) => {
 
             /* Converting datepicker format to Date Format  */
-            const formData = {
+            const formData: IAddTask = {
                 task_name: values.name.trim(), 
                 from: values.from.replace("T", " "),
                 to: values.to.replace("T", " "),
@@ -47,6 +48,7 @@ const EditDialog: React.FC<EditDialogProps> = ({closeDialog, name, from, to, id,
 
             const fromDate = moment(moment(formData.from, moment.ISO_8601).utc().format());
             const toDate = moment(moment(formData.to, moment.ISO_8601).utc().format());
+            formData.task_name =  formData.task_name.charAt(0).toUpperCase() + formData.task_name.slice(1);
             var duration = moment.duration(toDate.diff(fromDate));
             var minutes = duration.asMinutes();
 
