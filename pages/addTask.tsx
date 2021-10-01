@@ -31,7 +31,8 @@ const AddTask: NextPage = () => {
         const currentDate = new Date();
 
         const month = (currentDate.getMonth() + 1) < 10 ? `0${currentDate.getMonth() + 1}` : `${currentDate.getMonth() + 1}`;
-        const date = `${currentDate.getFullYear()}-${month}-${currentDate.getDate()}`;
+        const dateFormat = currentDate.getDate() < 10  ?  `0${currentDate.getDate()}` : `${currentDate.getDate()}`;
+        const date = `${currentDate.getFullYear()}-${month}-${dateFormat}`;
         const hours = (currentDate.getHours() < 10) ? `0${currentDate.getHours()}`: `${currentDate.getHours()}`;
         const minutes = (currentDate.getMinutes() < 10) ? `0${currentDate.getMinutes()}`: `${currentDate.getMinutes()}`;
         return `${date}T${hours}:${minutes}`

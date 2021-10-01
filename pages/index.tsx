@@ -26,7 +26,8 @@ const GetCurrentDate = (): string => {
     new Date().getMonth() + 1 < 10
       ? `0${new Date().getMonth() + 1}`
       : `${new Date().getMonth() + 1}`;
-  return `${new Date().getFullYear()}-${month}-${new Date().getDate()}`;
+      const date = new Date().getDate() < 10  ?  `0${new Date().getDate()}` : `${new Date().getDate()}`;
+  return `${new Date().getFullYear()}-${month}-${date}`;
 };
 
 /* Generating Random RGB value for pie chart */
